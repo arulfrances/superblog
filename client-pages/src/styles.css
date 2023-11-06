@@ -1,0 +1,28 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+.navbar-header{
+    height: 50px;
+    align-items: center;
+    color: #fff;
+    background: linear-gradient(80deg,blueviolet, blue, blueviolet);
+    justify-content: space-between;
+    padding: 20px 30px;
+    width: 100%;
+    display: flex;
+}
+
+
+.link-item{
+    color: white;
+    text-decoration: none;
+    margin: 0px 10px;
+}
+
+
+
+
