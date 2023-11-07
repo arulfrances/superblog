@@ -8,28 +8,29 @@ import { useNavigate } from "react-router-dom";
 function LoginPage() {
 
 
-    const [useremail, setUserEmail] = useState();
-    const [userpassword, setUserPassword] = useState();
+    const [email, setUserEmail] = useState();
+    const [password, setUserPassword] = useState();
     const navigate = useNavigate();
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        alert("Test"&useremail & userpassword);
+       // alert("Test"&useremail & userpassword);
         try {
-            axios.post('http://localhost:3001/login', { useremail, userpassword })
+            axios.post('http://localhost:3001/login', { email, password })
                 .then(
-                    result => {
+                    result => 
+                    {
                         console.log(result);
 
-                        if (result.data === "Success") {
+                        // if (result.data === "Success") {
 
-                            console.log("LOGIN SUCCESSFUL");
-                            navigate('/blogspage');
-                        }
+                        //     console.log("LOGIN SUCCESSFUL");
+                          navigate('/blogspage');
+                        // }
+                    
                     }
-
                 )
                 .catch(
                     error => console.log(error)
@@ -48,7 +49,7 @@ function LoginPage() {
             <div className="loginPage">
 
                 <h2>Login</h2>
-                <form onSubmit={handleSubmit} autoComplete="off">
+                <form onSubmit={ handleSubmit } autoComplete="off">
                     <div className="container">
                         <div className="card">
 
@@ -60,7 +61,7 @@ function LoginPage() {
                                 <div className="col-auto">
                                     {/* <input type="text" class="form-control-plaintext" id="staticEmail" value="email@example.com"/> */}
                                     <input className="form-control" type="text" id="emailField" autoComplete="off" placeholder="email@example.com" aria-label="default input example"
-                                        onChange={(e) => { setUserEmail(e.target.value) }}></input>
+                                        onChange={e =>  setUserEmail(e.target.value) }></input>
                                 </div>
 
                             </div>
@@ -71,13 +72,13 @@ function LoginPage() {
                                 </div>
                                 <div className="col-auto">
                                     <input type="password" placeholder="Enter your Password" autoComplete="off" className="form-control" id="inputPassword"
-                                        onChange={(e) => { setUserPassword(e.target.value) }} />
+                                        onChange={e =>  setUserPassword(e.target.value) } />
                                 </div>
                             </div>
                             <br />
                             <br />
 
-                            <button type="submit" className="btn btn-primary mb-3">Click to Login</button>
+                            <button className="btn btn-primary mb-3">Click to Login</button>
 
                             <p>New User, please click on Login Button</p>
 

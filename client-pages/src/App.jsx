@@ -6,6 +6,7 @@ import RegisterPage from './Register';
 import LoginPage from "./Login";
 import AllPosts from "./AllPosts";
 import NavBar from "./Navbar";
+import CreateAPost from "./CreateAPost";
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
                     <Route path='/register' element={<RegisterPage />} > </Route>
                     <Route path='/login' element={<LoginPage />} > </Route>
                     <Route path='/allposts' element={<AllPosts />} > </Route>
+                    <Route path='/createpost' element={<CreateAPost />} > </Route>
                 </Routes>
             </BrowserRouter>
 

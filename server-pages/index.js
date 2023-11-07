@@ -35,7 +35,9 @@ app.post('/register', (req, res) => {
 
 
 app.post('/login', (req,res) => {
-    const {email, password} = req.body;
+
+    console.log("Login Connected");
+    const {email, password } = req.body;
   LoginModel.findOne({email:email})
   .then(user => {
     if(user){
@@ -54,7 +56,7 @@ app.post('/login', (req,res) => {
     //     res.json("User Account is not available! Please register!");
     //     console.log("User Account is not available! Please register!");
     // }
-  })  
+  }) 
 })
 
 //mongodb+srv://admin:<password>@devcluster.fzijmc0.mongodb.net/?retryWrites=true&w=majority
