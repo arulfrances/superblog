@@ -24,5 +24,48 @@
 }
 
 
+.article_container{
+    display: flex;
+    border: 2px;
+    flex-direction: column;
+}
 
 
+.articleTitle{
+
+    font-family: cursive;
+    color: blueviolet;
+    ;
+}
+
+.articleDesc{
+
+}
+
+
+.articleContent{
+    border: 1px solid burlywood;
+    margin: 20px;
+    padding: 20px;
+    text-decoration: none
+}
+
+
+
+.article_container{
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+}
+
+.article_form{
+    width: 50%;
+   
+    padding: 20px;
+}
+
+.article_form input, .article_form textarea, .article_form button {
+    width: 90%;
+    margin: 10px 0px;
+    padding: 10px;
+}

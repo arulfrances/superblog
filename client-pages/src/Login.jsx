@@ -24,11 +24,10 @@ function LoginPage() {
                     {
                         console.log(result);
 
-                        // if (result.data === "Success") {
-
-                        //     console.log("LOGIN SUCCESSFUL");
-                          navigate('/blogspage');
-                        // }
+                         if (result.data === "Success") {
+                            console.log("LOGIN SUCCESSFUL");
+                          navigate('/allposts');
+                        }
                     
                     }
                 )

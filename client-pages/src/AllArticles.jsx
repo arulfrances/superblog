@@ -1,49 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import './styles.css';
+import React from "react";
+import Home from "./Home";
 
 
-function AllPosts() {
-
-    const [articles, setArticles] = useState([]);
-
-    useEffect(() => {
-
-        axios.get('http://localhost:3001/allarticles')
-            .then(articles => {
-                setArticles(articles.data);
-            })
-            .catch(err => console.log(err));
-
-    })
+function AllArticles() {
 
     return (
         <>
-            <h2>Welcome to Super Blog</h2>
+<h1>Welcome to Super Blog</h1>
 
+       <Home/>
+            
 
-            <div className='article_container'>
-
-                {
-                    articles.map(article => (
-
-                        <>
-                            <div className='articleContent'>
-                                Posted By <b><i>{article.author}</i></b> &nbsp; &nbsp; &nbsp;
-                                Created On <b><i>{article.createdAt}</i> </b>
-                                <button>Edit</button> <button>Delete</button>
-                                <h3 className="articleTitle">{article.title}</h3>
-                                <p className="articleDesc">{article.description}</p>
-                            </div>
-                        </>
-
-                    ))
-                }
-
-
-            </div>
-
-            {/* <div>
+            <div>
                 <h2> Post1</h2>
                 <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</span>
 
@@ -66,11 +34,11 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
 
                 <span>"At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."</span>
 
-            </div> */}
+            </div> 
         </>
     )
 
 }
 
 
-export default AllPosts;
+export default AllArticles;
